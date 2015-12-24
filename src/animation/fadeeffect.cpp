@@ -18,8 +18,8 @@ void FadeEffect::fade(sf::RenderWindow& window)
     firstFrame.setTextureRect(mFrames[0].mFrame);
     nextFrame .setTextureRect(mFrames[1].mFrame);
 
-    firstFrame.setColor(sf::Color(0, 0, 0, opacityMain));
-    nextFrame.setColor(sf::Color(0, 0, 0, opacityNext));
+    firstFrame.setColor(sf::Color(255, 255, 255, opacityMain));
+    nextFrame.setColor(sf::Color(255, 255, 255, opacityNext));
 
     opacityMain--;
     opacityNext++;
