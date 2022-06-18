@@ -15,12 +15,13 @@ If the seeds touch the tiles, the tile is destroyed. It is game over when you ar
 
 My friend and I thought that it would take only a few hours, maybe one to three maximum. But no, it took so much longer. In fact, after 14+ hours for coding for it in my free time after two weekish, I still had no finished it.
 
-It was a huge eye opener for me. The game looked so simple, but it really wasn't. From here on, all my probjects I have worked on for a loong time, and have never questioned it.
+It was a huge eye opener for me. The game looked so simple, but it really wasn't. From here on, all my projects I have worked on for a long time, and have never questioned it.
 
 Here is what it ended up looking like:
 
 ![alt text](http://puu.sh/o9ldO/205a5717ad.png "Result" )
 
 You can walk left and right and press Z to fire out your tongue, and the seeds can be collected, and a fancy flashing text showing the score appears for a few seconds.
+
 
 
