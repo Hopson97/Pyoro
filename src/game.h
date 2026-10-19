@@ -3,8 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include <resourcemanager.h>
-#include "menustate.h"
+#include "states/menustate.h"
+#include "resourcemanager.h"
 
 
 class State;

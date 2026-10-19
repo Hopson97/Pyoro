@@ -1,4 +1,5 @@
 #include "seed.h"
+#include "../../Random.h"
 
 Seed::Seed(ResourceManager &manager, std::string textureName):
 PyoroSprite(manager, textureName)
@@ -14,8 +15,8 @@ Seed::logic() does logic of seeds children
 void Seed::logic(float dt, float clockedTime, phase currPhase)
 {
     centerOrigin();                                 //Centre the origin of the seed     ~ PyoroSprite::centerOrigin()
-    mSprite.setOrigin(mSprite.getOrigin().x,
-                      mSprite.getOrigin().y + 10);  //Offset the centred origin by 10
+    mSprite.setOrigin(
+        {mSprite.getOrigin().x, mSprite.getOrigin().y + 10}); // Offset the centred origin by 10
 
     if(!amActive)                                    //If the seed is not active
     {
@@ -49,7 +50,7 @@ Seed::fallToGround() causes the seed to fall to ground
 */
 void Seed::fallToGround(float dt)
 {
-    mSprite.move(0, mFallSpeed * dt);    //Move the sprite down
+    mSprite.move({0, mFallSpeed * dt}); // Move the sprite down
 }
 
 /*
@@ -78,7 +79,7 @@ void Seed::spawnMe()
     int xPos = randRange(5, 640 - 20);  //Pick a random xPosition ~ Random.h randRange(int, int)
     int yPos = -50;                     //Y axis of seeds starts off-screen
 
-    mSprite.setPosition(xPos, yPos);    //Make seed go to said position
+    mSprite.setPosition({(float)xPos, (float)yPos}); // Make seed go to said position
 }
 
 /*
@@ -99,7 +100,7 @@ Seed::destroySeed() destroys the seed
 */
 void Seed::destroySeed()
 {
-    mSprite.setPosition(mSprite.getPosition().x, -500); //Set sprite position to off-screen
+    mSprite.setPosition({mSprite.getPosition().x, -500}); // Set sprite position to off-screen
     amActive = false;                                   //Set active to false
 }
 

@@ -36,13 +36,13 @@ void Tongue::setPos(sf::Vector2f pos)
 {
     if(mDirection == left)                          //If the direction is "left"
     {
-        tongue.setPosition(pos.x - 24, pos.y - 5);  //Set the tongue to be left of player
-        tongue.setRotation(135);                    //Set the rotation of tongue to extend left
+        tongue.setPosition({pos.x - 24, pos.y - 5}); // Set the tongue to be left of player
+        tongue.setRotation(sf::degrees(135));                    //Set the rotation of tongue to extend left
     }
     else if(mDirection == right)                    //If the direction is "right"
     {
-        tongue.setPosition(pos.x + 24, pos.y - 5);  //Set the tongue to be right of player
-        tongue.setRotation(225);                    //Set the rotation of tongue to extend right
+        tongue.setPosition({pos.x + 24, pos.y - 5}); // Set the tongue to be right of player
+        tongue.setRotation(sf::degrees(225));                    //Set the rotation of tongue to extend right
     }
 }
 

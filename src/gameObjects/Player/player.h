@@ -1,8 +1,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "pyorosprite.h"
 #include "tongue.h"
+#include "../../resourcemanager.h"
+#include "../../phaseenums.h"
+#include "../pyorosprite.h"
+#include "../../animation/animation.h"
 
 
 class Player : public PyoroSprite

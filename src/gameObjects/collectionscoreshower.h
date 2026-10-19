@@ -1,13 +1,14 @@
 #ifndef COLLECTIONSCORESHOWER_H
 #define COLLECTIONSCORESHOWER_H
 
-#include "resourcemanager.h"
-#include "Random.h"
+
+
 
 
 #include <SFML/Graphics.hpp>
 #include <sstream>
 #include <iostream>
+#include "../resourcemanager.h"
 
 class collectionScoreShower
 {

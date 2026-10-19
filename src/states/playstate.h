@@ -6,8 +6,12 @@
 
 #include "../game.h"
 #include "state.h"
-#include "gameobjects.h"
-#include "phaseenums.h"
+#include "../gameObjects/Seeds/seed.h"
+#include "../gameObjects/collectionscoreshower.h"
+#include "../gameObjects/floortile.h"
+#include "../gameObjects/Player/player.h"
+#include "../gameObjects/background.h"
+
 
 class playState : public State
 {

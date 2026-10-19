@@ -1,4 +1,5 @@
 #include "collectionscoreshower.h"
+#include "../Random.h"
 
 /*
 ============================================================================================================================================================================
@@ -8,9 +9,9 @@ The constructor sets the font and stuff
 collectionScoreShower::collectionScoreShower(ResourceManager &manager, float currTime, int score, sf::Vector2f pos):
     active(true),           //The score shower is active
     mLifeTime(1),           //Set the life time of the score shower to (x) seconds
-    mStartTime(currTime)    //Set the start time aka time since start of game
+    mStartTime(currTime),    //Set the start time aka time since start of game
+    mText(manager.getFont("instruction"))
 {
-    mText.setFont(manager.getFont("instruction"));  //Set font
     mText.setPosition(pos);                         //Set position
 
     std::ostringstream buff;                        //Set the
@@ -40,7 +41,7 @@ collectionScoreShower::draw() draws the text
 */
 void collectionScoreShower::draw(sf::RenderWindow& window)
 {
-    mText.setColor(randColour());   //Set to random colour (aka flash the text)
+    mText.setFillColor(randColour());   //Set to random colour (aka flash the text)
     window.draw(mText);             //Draw text to window
 
 }

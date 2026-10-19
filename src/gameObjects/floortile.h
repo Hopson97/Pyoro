@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "pyorosprite.h"
+#include "../animation/animation.h"
 
 class FloorTile : public PyoroSprite
 {

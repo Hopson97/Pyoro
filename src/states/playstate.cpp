@@ -1,5 +1,7 @@
 #include "playstate.h"
 
+#include "../gameObjects/Seeds/seed1.h"
+
 /*
 ============================================================================================================================================================================
 The constructor sets up the sprites
@@ -8,8 +10,8 @@ The constructor sets up the sprites
 playState::playState(Game* game):
     mPlayer     (game->getResourceManager(), "Player"),
     mBackground (game->getResourceManager(), "Background")
+    , mScoreText(game->getResourceManager().getFont("arial"))
 {
-    mScoreText.setFont(game->getResourceManager().getFont("arial"));
 
     mGame = game;                   //Assign a pointer the current game ~this
     addFloorTiles(20);              //Add the 20 floor tiles            ~this
@@ -28,7 +30,7 @@ playState::input() is unused (for now?)
 */
 void playState::input  (float dt, float clockedTime)
 {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::J))
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::J))
     {
         mDrawMode = fadeDraw;
     }

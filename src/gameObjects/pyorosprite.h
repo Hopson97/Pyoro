@@ -2,11 +2,10 @@
 #define PYOROSPRITE_H
 
 #include <iostream>
+#include "../resourcemanager.h"
+#include "../phaseenums.h"
+#include "../animation/fadeeffect.h"
 
-#include "resourcemanager.h"
-#include "animation/animation.h"
-#include "animation/fadeeffect.h"
-#include "phaseenums.h"
 
 /**
         When inheriting from this class, you must implement the following methods:

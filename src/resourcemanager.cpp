@@ -19,10 +19,11 @@ ResourceManager::loadFonts() will load the fonts
 */
 void ResourceManager::loadFonts()
 {
-    if(!arial.loadFromFile("fonts/arial.ttf")); //Load the Arial texture
+    if(!arial.openFromFile("fonts/arial.ttf")); //Load the Arial texture
     mFonts["arial"] = arial;                    //Add it to the "map"
 
-    if(!instruction.loadFromFile("fonts/Instruction.ttf")); //Load the instruction font
+    if (!instruction.openFromFile("fonts/Instruction.ttf"))
+        ;                                // Load the instruction font
     mFonts["instruction"] = instruction;                    //Add it to the "map"
 }
 

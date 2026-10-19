@@ -1,8 +1,8 @@
 #ifndef SEED_H
 #define SEED_H
 
-#include "pyorosprite.h"
-#include "Random.h"
+#include "../pyorosprite.h"
+#include "../../animation/animation.h"
 
 enum Type
 {

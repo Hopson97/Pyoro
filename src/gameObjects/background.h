@@ -3,7 +3,7 @@
 
 
 #include "pyorosprite.h"
-#include "animation/fadeeffect.h"
+#include "../animation/fadeeffect.h"
 
 class Background : public PyoroSprite
 {

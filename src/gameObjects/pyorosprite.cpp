@@ -1,10 +1,10 @@
 #include "pyorosprite.h"
 
-PyoroSprite::PyoroSprite(ResourceManager &manager, std::string textureName):
-    normToSephia(mSprite),
-    SephiaToNight(mSprite)
+PyoroSprite::PyoroSprite(ResourceManager& manager, std::string textureName)
+    : normToSephia(mSprite)
+    , SephiaToNight(mSprite)
+    , mSprite(manager.getTexture(textureName))
 {
-    mSprite.setTexture(manager.getTexture(textureName));//Set the texture to something from the resource manager
 }
 /*
 ==============================================================================================
@@ -23,8 +23,7 @@ PyoroSprite::centerOrigin() centres the origin of the sprite
 */
 void PyoroSprite::centerOrigin()
 {
-    mSprite.setOrigin(mSprite.getLocalBounds().width / 2,
-                      mSprite.getLocalBounds().height / 2);
+    mSprite.setOrigin({mSprite.getLocalBounds().size.x / 2, mSprite.getLocalBounds().size.y / 2});
 }
 
 /*

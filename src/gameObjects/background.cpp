@@ -14,8 +14,8 @@ void Background::logic(float dt, float clockedTime, phase currPhase)
 
 void Background::setUpAnimation()
 {
-    test.addFrame(sf::IntRect(0, 0,   640, 575), 0);
-    test.addFrame(sf::IntRect(0, 575, 640, 575), 0);
+    test.addFrame(sf::IntRect({{0, 0}, {640, 575}}), 0);
+    test.addFrame(sf::IntRect({{0, 575}, {640, 575}}), 0);
 }
 
 bool Background::fade(sf::RenderWindow &window, phase phaseTransition)

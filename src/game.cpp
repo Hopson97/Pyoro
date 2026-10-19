@@ -11,13 +11,15 @@ Game::Game():
     WINDOW_WIDTH(640),  //Sets the screen width
     WINDOW_HEIGHT(575), //Sets the screen height
     lastTime(0)
+    , framesPerSecond(arial)
 {
-    mWindow.create(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Pyoro"); //Create the window
+    mWindow.create(sf::VideoMode({(unsigned)WINDOW_WIDTH, (unsigned)WINDOW_HEIGHT}),
+                   "Pyoro");       // Create the window
     mWindow.setFramerateLimit(60);  //Set the frame rate limit of window to 60
 
     changeState(new MenuState(this)); //Change the game state to "menu"
 
-    arial.loadFromFile("fonts/arial.ttf");
+    arial.openFromFile("fonts/arial.ttf");
     framesPerSecond.setFont(arial);
 }
 /*
@@ -107,16 +109,17 @@ Game::windowEvents() handles the events of the window such as closing
 void Game::windowEvents()
 {
     mWindow.clear();
-    sf::Event event;    //The object to handle events
 
-    while(mWindow.pollEvent(event)) //While the window is looking for events
+
+    while (auto event = mWindow.pollEvent())
     {
-        if(event.type == sf::Event::Closed) //If the event is of type "close"
+        if (event->is<sf::Event::Closed>())
         {
-            mWindow.close();    //Close the window
-            exit(0);             //Exit the program
+            mWindow.close(); // Close the window
+            exit(0);         // Exit the program
         }
     }
+
 }
 
 void Game::displayFPS(float currentTime)

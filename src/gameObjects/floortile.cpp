@@ -9,8 +9,8 @@ FloorTile::FloorTile(int xPos, int yPos, ResourceManager &manager, std::string t
     PyoroSprite(manager, textureName),
     active(true)
 {
-    mSprite.setPosition(xPos, yPos);
-    mSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
+    mSprite.setPosition({(float)xPos, (float)yPos});
+    mSprite.setTextureRect(sf::IntRect({{0, 0}, {32, 32}}));
     setUp(manager); //Set up animations and sounds (defined in PyoroSprite)
 }
 
@@ -47,9 +47,9 @@ Floortile::setUpAnimation sets the animations of tile. This is probably temporar
 */
 void FloorTile::setUpAnimation()
 {
-    sf::IntRect f1(0, 0, 32, 32);
-    sf::IntRect f2(32, 0, 32, 32);
-    sf::IntRect f3(64, 0, 32, 32);
+    sf::IntRect f1({{0, 0}, {32, 32}});
+    sf::IntRect f2({{32, 0}, {32, 32}});
+    sf::IntRect f3({{64, 0}, {32, 32}});
 }
 
 void FloorTile::uniqueSetUp(ResourceManager& resourceManager)
